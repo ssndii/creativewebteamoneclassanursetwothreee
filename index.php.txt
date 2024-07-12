@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kelompok 1 - UMMI S1 Keperawatan</title>
+<link rel="stylesheet" href="styles.css"> <!-- File CSS -->
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <h1>Kelompok 1</h1>
+        <p>UMMI - S1 Keperawatan</p>
+    </div>
+</header>
+
+<main>
+    <section id="members">
+        <h2>Anggota Kelompok</h2>
+        <div class="member" onclick="showBio('sindi')">
+            <img src="sindi.jpg" alt="Sindi Restiani">
+            <p>Sindi Restiani</p>
+        </div>
+        <!-- Tambahkan div lain untuk anggota kelompok lainnya -->
+        <!-- Contoh: -->
+        <!-- <div class="member" onclick="showBio('anggota2')"> -->
+        <!--    <img src="anggota2.jpg" alt="Nama Anggota 2"> -->
+        <!--    <p>Nama Anggota 2</p> -->
+        <!-- </div> -->
+    </section>
+
+    <section id="upload">
+        <h2>Upload File</h2>
+        <form action="upload.php" method="post" enctype="multipart/form-data">
+            <input type="file" name="fileToUpload" id="fileToUpload" accept=".jpg, .png, .doc, .docx, .ppt, .pptx, .pdf, .gif, .ai, .mov, .mp4">
+            <input type="submit" value="Upload File" name="submit">
+        </form>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-links">
+        <a href="#members">Home</a>
+        <a href="#upload">Upload</a>
+        <a href="profile.php">Profil</a> <!-- Halaman profil pengguna -->
+    </div>
+</footer>
+
+<script src="script.js"></script> <!-- File JavaScript -->
+</body>
+</html>

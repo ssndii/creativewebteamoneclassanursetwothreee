@@ -1,0 +1,13 @@
+// script.js
+
+function showBio(memberName) {
+    // Example function to show member's bio when clicking on their image
+    switch (memberName) {
+        case 'sindi':
+            alert("Sindi Restiani\n\nBiodata:\n- Nama: Sindi Restiani\n- Umur: 25 tahun\n- Pendidikan: S1 Keperawatan");
+            break;
+        // Add cases for other members as needed
+        default:
+            break;
+    }
+}

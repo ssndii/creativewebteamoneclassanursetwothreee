@@ -1,0 +1,37 @@
+<?php
+$targetDir = "uploads/";
+$targetFile = $targetDir . basename($_FILES["fileToUpload"]["name"]);
+$uploadOk = 1;
+$fileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
+$allowedExtensions = array("jpg", "jpeg", "png", "doc", "docx", "ppt", "pptx", "pdf", "gif", "ai", "mov", "mp4");
+
+// Check if file is a valid file type
+if (!in_array($fileType, $allowedExtensions)) {
+    echo "Sorry, only JPG, JPEG, PNG, DOC, DOCX, PPT, PPTX, PDF, GIF, AI, MOV, MP4 files are allowed.";
+    $uploadOk = 0;
+}
+
+// Check if file already exists
+if (file_exists($targetFile)) {
+    echo "Sorry, file already exists.";
+    $uploadOk = 0;
+}
+
+// Check file size (max 500MB)
+if ($_FILES["fileToUpload"]["size"] > 500 * 1024 * 1024) {
+    echo "Sorry, your file is too large (max 500MB).";
+    $uploadOk = 0;
+}
+
+// Check if $uploadOk is set to 0 by an error
+if ($uploadOk == 0) {
+    echo "Sorry, your file was not uploaded.";
+// if everything is ok, try to upload file
+} else {
+    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $targetFile)) {
+        echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+    } else {
+        echo "Sorry, there was an error uploading your file.";
+    }
+}
+?>
